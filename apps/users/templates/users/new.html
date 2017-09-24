@@ -5,6 +5,11 @@
 </head>
 <body>
 	<h1>Add A New User</h1>
+	{% if messages %}
+		{% for x in messages %}
+			<p>{{ x.message }}</p>
+		{% endfor %}
+	{% endif %}
 	<form action="/users/create" method="POST">
 		{% csrf_token %}
 		<label>First Name:</label>

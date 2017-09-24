@@ -44,7 +44,7 @@ def update(request, id):
 	if len(errors):
 		for error in errors.itervalues():
 			messages.error(request, error)
-		return redirect("/users/edit")
+		return redirect("/users/"+id+"/edit")
 	else:
 		User.objects.filter(id=int(id)).update(first_name=request.POST["first_name"], last_name=request.POST["last_name"], email=request.POST["email"])
 		return redirect("/users/"+id)

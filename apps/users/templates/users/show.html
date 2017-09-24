@@ -4,15 +4,12 @@
 	<title>Users Show</title>
 </head>
 <body>
-	<h1>User {{ id }}</h1>
-	<p>Name: {{ full_name }}</p>
-	<p>Email: {{ email }}</p>
-	<p>Created: {{ created }}</p>
-	<form action="#">
-		<input type="submit" value="Edit">
-	</form>
-	<form action="#">
-		<input type="submit" value="Delete">
-	</form>
+	<h1>User {{ user.id }}</h1>
+	<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+	<p>Email: {{ user.email }}</p>
+	<p>Created: {{ user.created_at }}</p>
+	<a href="/users/{{ user.id }}/edit">Edit</a>
+	<a href="/users/{{ user.id }}/destroy">Delete</a>
+	<a href="/">Go Back</a>
 </body>
 </html>
